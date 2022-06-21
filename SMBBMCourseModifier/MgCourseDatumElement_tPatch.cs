@@ -18,7 +18,7 @@ namespace SMBBMCourseModifier
             // is to add support for custom courses with zero or negative values (ex: to go backwards in a course)
             // That being said, some base game stages in a course have zero values for some reason... so we need to
             // default to base game behaviour for base game courses instead of our custom support
-            if (Plugin.courses.ContainsKey(MgCourseDataManager.GetCurrentCourseDatum().m_CourseStr))
+            if (PluginResources.courses.ContainsKey(MgCourseDataManager.GetCurrentCourseDatum().m_CourseStr))
             {
                 foreach (MgCourseDatum.goal_t goal in __instance.m_goalList)
                 {
