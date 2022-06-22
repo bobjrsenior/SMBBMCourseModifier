@@ -31,7 +31,11 @@
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="SMBBMLeaderboardDisabler">
-			<HintPath>Z:\smbbm\BepInEx\plugins\SMBBMLeaderboardDisabler.dll</HintPath>
+			<HintPath>$(SMBBMDir)\BepInEx\plugins\SMBBMLeaderboardDisabler.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="JsonLibs">
+			<HintPath>$(SMBBMDir)\BepInEx\plugins\JsonLibs\JsonLibs.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 	</ItemGroup>

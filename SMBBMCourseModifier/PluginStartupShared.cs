@@ -62,7 +62,7 @@ namespace SMBBMCourseModifier
 
 
             // Serializethe JSON file into a C# one
-            var courseModDef = PluginResources.JsonLoader.DeserializeJson<CourseModDef>(filepath);
+            var courseModDef = System.Text.Json.JsonSerializer.Deserialize<CourseModDef>(File.ReadAllText(filepath)); ;
 
             MergeCourses(courseModDef.course_defs);
             PluginResources.PluginLogger.LogInfo($"Loaded: {courseModDef}");

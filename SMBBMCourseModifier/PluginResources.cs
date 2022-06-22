@@ -34,18 +34,16 @@ namespace SMBBMCourseModifier
 
         public static LeaderboardDisabler LeaderboardDisabler;
 
-        public static JsonLoader JsonLoader;
 
         public static string PLUGIN_NAME;
 
-        public static void InitializePluginResources(ModLoader modLoader, string pluginName, PluginLogger pluginLogger, String gameRootPath, JsonLoader jsonLoader = null, LeaderboardDisabler leaderboardDisabler = null)
+        public static void InitializePluginResources(ModLoader modLoader, string pluginName, PluginLogger pluginLogger, String gameRootPath, LeaderboardDisabler leaderboardDisabler = null)
         {
             PLUGIN_NAME = pluginName;
             MOD_LOADER = modLoader;
             PluginResources.PluginLogger = pluginLogger;
             userDataDir = $"{gameRootPath}{Path.DirectorySeparatorChar}UserData";
             dataDir = $"{userDataDir}{Path.DirectorySeparatorChar}{dataDirName}";
-            JsonLoader = jsonLoader;
             LeaderboardDisabler = leaderboardDisabler;
         }
     }
