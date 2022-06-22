@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnhollowerRuntimeLib;
 
 namespace SMBBMCourseModifier.BMM
 {
@@ -27,10 +28,10 @@ namespace SMBBMCourseModifier.BMM
             {
                 //Console.WriteLine("Trying to inject DelayedCourseModifier Component");
                 //UnhollowerRuntimeLib.ClassInjector.RegisterTypeInIl2Cpp<DelayedCourseModifier>(UnhollowerRuntimeLib.RegisterTypeOptions.Default);
-                var obj = new GameObject("SMBBMDelayedCourseModifier");
+                var obj = new GameObject { hideFlags = HideFlags.HideAndDontSave };
                 UnityEngine.Object.DontDestroyOnLoad(obj);
                 Console.WriteLine("Trying to add DelayedCourseModifier Component");
-                delayedCourseModifier = obj.AddComponent<DelayedCourseModifier>();
+                delayedCourseModifier = new DelayedCourseModifier(obj.AddComponent(Il2CppType.Of<DelayedCourseModifier>()).Pointer);
             }
         }
     }

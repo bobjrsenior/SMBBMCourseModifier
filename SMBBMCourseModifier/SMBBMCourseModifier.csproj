@@ -7,7 +7,7 @@
 		<Version>1.0.0</Version>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<LangVersion>latest</LangVersion>
-		<SMBBMDir>Z:\smbbm</SMBBMDir>
+		<SMBBMDir>C:\Program Files (x86)\Steam\steamapps\common\smbbm</SMBBMDir>
 		<CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
 	</PropertyGroup>
 
@@ -19,28 +19,20 @@
 
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
-			<HintPath>$(SMBBMDir)\BepInEx\unhollowed\Assembly-CSharp.dll</HintPath>
+			<HintPath>$(SMBBMDir)\managed\Assembly-CSharp.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="Il2Cppmscorlib">
-			<HintPath>$(SMBBMDir)\BepInEx\unhollowed\Il2Cppmscorlib.dll</HintPath>
+			<HintPath>$(SMBBMDir)\managed\Il2Cppmscorlib.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
-			<HintPath>$(SMBBMDir)\BepInEx\unhollowed\UnityEngine.CoreModule.dll</HintPath>
+			<HintPath>$(SMBBMDir)\managed\UnityEngine.CoreModule.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="HarmonyLib">
-			<HintPath>$(SMBBMDir)\BepInEx\core\0Harmony.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="SMBBMLeaderboardDisabler">
-			<HintPath>Z:\smbbm\BepInEx\plugins\SMBBMLeaderboardDisabler.dll</HintPath>
+			<HintPath>$(SMBBMDir)\0Harmony.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 	</ItemGroup>
-
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="xcopy &quot;$(TargetDir)*.dll&quot; &quot;$(SMBBMDir)\BepInEx\plugins&quot; /y" />
-	</Target>
 </Project>

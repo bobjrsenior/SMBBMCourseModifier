@@ -6,7 +6,6 @@ namespace SMBBMCourseModifier
 {
     public interface PluginLogger
     {
-
         void LogDebug(string message);
         void LogInfo(string message);
     }

@@ -14,7 +14,11 @@ namespace SMBBMCourseModifier
         private bool initializedCourseModifying = false;
         private bool initializedCourseAdding = true; // Disabled since it doesn't work
 
-        MgCourseDataManager dataManager;
+        private MgCourseDataManager dataManager;
+
+        public DelayedCourseModifier(IntPtr value) : base(value) { }
+
+        public DelayedCourseModifier() { }
 
         void Update()
         {
@@ -33,7 +37,7 @@ namespace SMBBMCourseModifier
 
         private void InitializeCourseModifying()
         {
-           PluginResources.pluginLogger.LogDebug("Initializing DelayedCourseModifier");
+            PluginResources.PluginLogger.LogDebug("Initializing DelayedCourseModifier");
             initializedCourseModifying = true;
 
             // Check if the data manager is available
@@ -42,7 +46,7 @@ namespace SMBBMCourseModifier
             {
                 initializedCourseModifying = false;
                 curDelay = 0.0f;
-               PluginResources.pluginLogger.LogDebug("Data Manager is still null");
+                PluginResources.PluginLogger.LogDebug("Data Manager is still null");
             }
             else
             {
@@ -52,13 +56,13 @@ namespace SMBBMCourseModifier
                     MainGameDef.eCourse courseEnum;
                     if (!Enum.TryParse<MainGameDef.eCourse>(course.Key, out courseEnum))
                     {
-                       PluginResources.pluginLogger.LogDebug($"Invalid Course Name: {course.Key}");
+                        PluginResources.PluginLogger.LogDebug($"Invalid Course Name: {course.Key}");
                         continue;
                     }
                     // See if it matches an existing course
                     if (dataManager.m_CourseDataDict.ContainsKey(courseEnum))
                     {
-                       PluginResources.pluginLogger.LogDebug($"Patching Course: {courseEnum}");
+                        PluginResources.PluginLogger.LogDebug($"Patching Course: {courseEnum}");
 
                         // Get the existing course data
                         MgCourseDatum courseData = dataManager.m_CourseDataDict[courseEnum];
@@ -94,7 +98,7 @@ namespace SMBBMCourseModifier
                                 stage.m_IsHalfTime = courseElement.is_half_time;
                                 stage.m_stageId = courseElement.stage_id;
 
-                               PluginResources.pluginLogger.LogDebug($"Adding stage with id {courseElement.stage_id}");
+                                PluginResources.PluginLogger.LogDebug($"Adding stage with id {courseElement.stage_id}");
                                 bool foundBlue = false;
 
                                 // Collect Goal information
@@ -107,12 +111,12 @@ namespace SMBBMCourseModifier
                                         MainGameDef.eGoalKind goalKind;
                                         if (!Enum.TryParse<MainGameDef.eGoalKind>(goalDef.goal_kind, out goalKind))
                                         {
-                                           PluginResources.pluginLogger.LogDebug($"Invalid Goal Kind: {goalDef.goal_kind}");
+                                            PluginResources.PluginLogger.LogDebug($"Invalid Goal Kind: {goalDef.goal_kind}");
                                             continue;
                                         }
                                         if (goalKind == MainGameDef.eGoalKind.Blue)
                                             foundBlue = true;
-                                       PluginResources.pluginLogger.LogDebug($"Adding goal {goalKind} for stage with id {courseElement.stage_id}");
+                                        PluginResources.PluginLogger.LogDebug($"Adding goal {goalKind} for stage with id {courseElement.stage_id}");
                                         goal.m_goalKind = goalKind;
                                         goal.m_goalKindStr = goalDef.goal_kind;
                                         goal.m_nextStep = goalDef.next_step;
@@ -125,7 +129,7 @@ namespace SMBBMCourseModifier
                                 {
                                     MgCourseDatum.goal_t goal = new();
                                     MainGameDef.eGoalKind goalKind = MainGameDef.eGoalKind.Blue;
-                                   PluginResources.pluginLogger.LogDebug($"Adding default goal {goalKind} for stage with id {courseElement.stage_id}");
+                                    PluginResources.PluginLogger.LogDebug($"Adding default goal {goalKind} for stage with id {courseElement.stage_id}");
                                     goal.m_goalKind = goalKind;
                                     goal.m_goalKindStr = goalKind.ToString();
                                     goal.m_nextStep = 1;
@@ -141,7 +145,7 @@ namespace SMBBMCourseModifier
                     }
                     else
                     {
-                       PluginResources.pluginLogger.LogDebug($"Didn't find dictionary entry for {courseEnum}");
+                        PluginResources.PluginLogger.LogDebug($"Didn't find dictionary entry for {courseEnum}");
                     }
                 }
 
@@ -209,7 +213,7 @@ namespace SMBBMCourseModifier
             sb
                 .Append($"  }}\n")
                 .Append($"}}\n");
-           PluginResources.pluginLogger.LogInfo(sb.ToString());
+           PluginResources.PluginLogger.LogInfo(sb.ToString());
 
         }
 
@@ -221,7 +225,7 @@ namespace SMBBMCourseModifier
         // Eperimental, doesn't work right now
         private void InitializeCourseAdding()
         {
-           PluginResources.pluginLogger.LogInfo("Initializing CourseModifier");
+            PluginResources.PluginLogger.LogInfo("Initializing CourseModifier");
             initializedCourseAdding = true;
 
             dataManager = MgCourseDataManager.Instance;
@@ -229,11 +233,11 @@ namespace SMBBMCourseModifier
             {
                 initializedCourseAdding = false;
                 curDelay = 0.0f;
-               PluginResources.pluginLogger.LogInfo("Data Manager is still null");
+                PluginResources.PluginLogger.LogInfo("Data Manager is still null");
             }
             else
             {
-               PluginResources.pluginLogger.LogInfo("Data Manager is alive");
+                PluginResources.PluginLogger.LogInfo("Data Manager is alive");
                 MainGameDef.eCourse neweCourse = (MainGameDef.eCourse)0x2C;
 
                 MgCourseDatum oldCourseDatum = dataManager.m_CourseDataDict[MainGameDef.eCourse.Smb1_Casual];
@@ -244,17 +248,13 @@ namespace SMBBMCourseModifier
                 });
 
                 // Proceed to make our own
-               PluginResources.pluginLogger.LogInfo("0000000000000000000000000");
                 MgCourseDatum myCourseDatum = (MgCourseDatum)MgCourseDatum.CreateInstance<MgCourseDatum>();//UnhollowerRuntimeLib.Il2CppType.Of<MgCourseDatum>());
-               PluginResources.pluginLogger.LogInfo("AAAAAAAAAAAAA");
                 myCourseDatum.m_Course = neweCourse;
-               PluginResources.pluginLogger.LogInfo("BBBBBBBBBBBBBBBBBBB");
                 myCourseDatum.m_courseNameTextReference = oldCourseDatum.m_courseNameTextReference;
                 myCourseDatum.m_CourseStr = "Smb1_Custom";
                 myCourseDatum.name = "MgCourseDatum_Smb1_Custom";
 
 
-               PluginResources.pluginLogger.LogInfo("CCCCCCCCCCCCCCCCCCCCCCCCc");
                 // TODO m_elementList
                 Il2CppSystem.Collections.Generic.List<MgCourseDatum.element_t> elements = new(oldCourseDatum.m_elementList.Count);
                 if (oldCourseDatum.m_elementList.Count > 0)
@@ -274,7 +274,6 @@ namespace SMBBMCourseModifier
                 myCourseDatum.m_StartMovieID = oldCourseDatum.m_StartMovieID;
                 myCourseDatum.m_StartMovieIDStr = oldCourseDatum.m_StartMovieIDStr;
                 myCourseDatum.m_ThumbnailSpritePath = oldCourseDatum.m_ThumbnailSpritePath;
-               PluginResources.pluginLogger.LogInfo("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEe");
                 dataManager.m_CourseDataDict[myCourseDatum.m_Course] = myCourseDatum;
                 Il2CppReferenceArray<MgCourseDatum> courseDatumArray = new(dataManager.m_MgCourseData.m_Entity.Count + 1);
                 if (dataManager.m_MgCourseData.m_Entity.Count > 0)
@@ -287,7 +286,7 @@ namespace SMBBMCourseModifier
                 //dataManager.m_MgCourseData.m_Entity.CopyTo(courseDatumArray, 0);
                 courseDatumArray[courseDatumArray.Count - 1] = myCourseDatum;
                 dataManager.m_MgCourseData.m_Entity = courseDatumArray;
-               PluginResources.pluginLogger.LogInfo($"eCourse Id 0x2C, MgCourseData entry should be at index {courseDatumArray.Count - 1}");
+                PluginResources.PluginLogger.LogInfo($"eCourse Id 0x2C, MgCourseData entry should be at index {courseDatumArray.Count - 1}");
 
                 // Deal with the Main Game Def
                 Il2CppStructArray<MainGameDef.eCourse> mainGameCourses = new(MainGameDef.s_DefaultUnlockedCourseArray.Count + 1);
@@ -298,7 +297,7 @@ namespace SMBBMCourseModifier
                         mainGameCourses[i] = MainGameDef.s_DefaultUnlockedCourseArray[i];
                         if (MainGameDef.s_DefaultUnlockedCourseArray[i] == MainGameDef.eCourse.Invalid)
                         {
-                           PluginResources.pluginLogger.LogInfo($"Value is null at index {i}");
+                            PluginResources.PluginLogger.LogInfo($"Value is null at index {i}");
                         }
                     }
                 }

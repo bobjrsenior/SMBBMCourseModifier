@@ -30,7 +30,7 @@ namespace SMBBMCourseModifier
 
         public static ModLoader MOD_LOADER;
 
-        public static PluginLogger pluginLogger;
+        public static PluginLogger PluginLogger;
 
         public static LeaderboardDisabler LeaderboardDisabler;
 
@@ -42,7 +42,7 @@ namespace SMBBMCourseModifier
         {
             PLUGIN_NAME = pluginName;
             MOD_LOADER = modLoader;
-            PluginResources.pluginLogger = pluginLogger;
+            PluginResources.PluginLogger = pluginLogger;
             userDataDir = $"{gameRootPath}{Path.DirectorySeparatorChar}UserData";
             dataDir = $"{userDataDir}{Path.DirectorySeparatorChar}{dataDirName}";
             JsonLoader = jsonLoader;

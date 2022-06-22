@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMBBMCourseModifier", "SMBB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMBBMCourseModifier.BepInEx", "SMBBMCourseAdder.BepInEx\SMBBMCourseModifier.BepInEx.csproj", "{2E51E156-DA4B-46FD-BE42-C642EF7596E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMBBMCourseModifier.BMM", "SMBBMCourseModifier.BMM\SMBBMCourseModifier.BMM.csproj", "{9A55D894-01EE-4211-BBC5-E236D32C79A5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{2E51E156-DA4B-46FD-BE42-C642EF7596E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E51E156-DA4B-46FD-BE42-C642EF7596E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E51E156-DA4B-46FD-BE42-C642EF7596E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A55D894-01EE-4211-BBC5-E236D32C79A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A55D894-01EE-4211-BBC5-E236D32C79A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A55D894-01EE-4211-BBC5-E236D32C79A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A55D894-01EE-4211-BBC5-E236D32C79A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

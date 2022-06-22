@@ -8,19 +8,19 @@ namespace SMBBMCourseModifier
     {
         public void Load()
         {
-            //TODO PluginStartupShared.PluginResources.pluginLogger = base.PluginResources.pluginLogger;
+            //TODO PluginStartupShared.PluginResources.PluginLogger = base.PluginResources.PluginLogger;
 
             // Make sure the UserData and plugin data directories exist
             // The exists check isn't needed but is included for PluginResources.pluginLoggerging purposes
             if (!Directory.Exists(PluginResources.userDataDir))
             {
                 Directory.CreateDirectory(PluginResources.userDataDir);
-                PluginResources.pluginLogger.LogInfo("Created UserData folder since it didn't already exist");
+                PluginResources.PluginLogger.LogInfo("Created UserData folder since it didn't already exist");
             }
             if (!Directory.Exists(PluginResources.dataDir))
             {
                 Directory.CreateDirectory(PluginResources.dataDir);
-                PluginResources.pluginLogger.LogInfo($"Created {PluginResources.dataDir} folder since it didn't already exist");
+                PluginResources.PluginLogger.LogInfo($"Created {PluginResources.dataDir} folder since it didn't already exist");
             }
 
             // Find and load all the configuration JSON files
@@ -36,7 +36,7 @@ namespace SMBBMCourseModifier
             {
                 dict += $"\"{course.Key}\", \"{course.Value}\"\n";
             }
-            PluginResources.pluginLogger.LogInfo($"Final Course List JSON is {{{dict}}}");
+            PluginResources.PluginLogger.LogInfo($"Final Course List JSON is {{{dict}}}");
 
             // If we are patching something, make sure to disable the leaderboards
             if (PluginResources.courses.Count > 0)
@@ -49,7 +49,7 @@ namespace SMBBMCourseModifier
             harmony.PatchAll();
 
             //TODO AddComponent<DelayedCourseModifier>();
-            PluginResources.pluginLogger.LogInfo($"Plugin {PluginResources.PLUGIN_NAME} is loaded!");
+            PluginResources.PluginLogger.LogInfo($"Plugin {PluginResources.PLUGIN_NAME} is loaded!");
         }
 
         /// <summary>
@@ -58,14 +58,14 @@ namespace SMBBMCourseModifier
         /// <param name="filepath">filepath of the JSON file to load</param>
         private void LoadJSONFile(string filepath)
         {
-            PluginResources.pluginLogger.LogInfo($"Loading file {filepath}");
+            PluginResources.PluginLogger.LogInfo($"Loading file {filepath}");
 
 
             // Serializethe JSON file into a C# one
             var courseModDef = PluginResources.JsonLoader.DeserializeJson<CourseModDef>(filepath);
 
             MergeCourses(courseModDef.course_defs);
-            PluginResources.pluginLogger.LogInfo($"Loaded: {courseModDef}");
+            PluginResources.PluginLogger.LogInfo($"Loaded: {courseModDef}");
         }
 
         /// <summary>

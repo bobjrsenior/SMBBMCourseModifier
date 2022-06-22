@@ -7,7 +7,6 @@ namespace SMBBMCourseModifier
     public interface LeaderboardDisabler
     {
         void DisableLeaderboards();
-
         void DisableLeaderboards(string disabler);
     }
 }

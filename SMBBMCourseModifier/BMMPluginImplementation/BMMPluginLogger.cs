@@ -8,7 +8,9 @@ namespace SMBBMCourseModifier.BMM
     {
         public void LogDebug(string message)
         {
-            Console.WriteLine($"DEBUG: {message}");
+            // As far as I know BMM doesn't really have an active Log Level
+            // To avoid completely spamming the output, this is disabled for BMM
+            //Console.WriteLine($"DEBUG: {message}");
         }
 
         public void LogInfo(string message)

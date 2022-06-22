@@ -6,12 +6,10 @@ namespace SMBBMCourseModifier.BMM
     {
         public T DeserializeJson<T>(string filepath)
         {
+            // BMM had the dlls for System.Text.Json included
+            // and has issues with extra dll libs so using it made
+            // miore sense than Newtonsoft
             return System.Text.Json.JsonSerializer.Deserialize<T>(File.ReadAllText(filepath));
-            //using (StreamReader file = File.OpenText(filepath))
-            //{
-            //    // Serialize the JSON file into a C# one
-            //    return System.Text.Json.JsonSerializer.Deserialize<T>(file.BaseStream);
-            //}
         }
     }
 }
