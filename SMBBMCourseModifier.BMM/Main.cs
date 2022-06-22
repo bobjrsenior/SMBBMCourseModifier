@@ -11,7 +11,7 @@ namespace SMBBMCourseModifier.BMM
 
         public static List<Type> OnModLoad(Dictionary<string, object> settings)
         {
-            PluginResources.InitializePluginResources(ModLoader.BEPINEX, "SMBBM Course Modifier", new BMMPluginLogger(), Directory.GetCurrentDirectory(), new BMMLeaderboardDisabler());
+            PluginResources.InitializePluginResources(ModLoader.BEPINEX, "SMBBM Course Modifier", new BMMPluginLogger(), Directory.GetCurrentDirectory(), new BMMJsonLoader(), new BMMLeaderboardDisabler());
             PluginStartupShared plugin = new();
             plugin.Load();
 
