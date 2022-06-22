@@ -1,4 +1,4 @@
-# SMBBMCourseModifier
+# SMBBM Course Modifier
 
 A plugin for Super Monkey Ball Banana Mania designed to allow modifying the existing courses. With it you can completely change what stages go in each course (SMB1 Casual, Story Mode World 1, etc).
 

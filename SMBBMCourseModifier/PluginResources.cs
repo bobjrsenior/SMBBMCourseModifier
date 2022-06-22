@@ -34,7 +34,6 @@ namespace SMBBMCourseModifier
 
         public static LeaderboardDisabler LeaderboardDisabler;
 
-
         public static string PLUGIN_NAME;
 
         public static void InitializePluginResources(ModLoader modLoader, string pluginName, PluginLogger pluginLogger, String gameRootPath, LeaderboardDisabler leaderboardDisabler = null)
