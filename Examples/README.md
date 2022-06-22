@@ -414,7 +414,7 @@ Disclaimers:
 1. Currently only works correctly in the BepInEx version
 2. This course includes data for the SMB1 Casual Course which conflicts with "SMB1 Casual Backwards.json"
 
---- Configuration not included here due to size ---
+`--- Configuration not included here due to size ---`
 
 The main things to note about this configuration are:
 1. It makes use of negative next_step values for goals
