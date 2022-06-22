@@ -4,9 +4,9 @@ using System.Text;
 
 namespace SMBBMCourseModifier
 {
-    internal class CourseGoalDef
+    public interface PluginLogger
     {
-        public string goal_kind;
-        public int next_step;
+        void LogDebug(string message);
+        void LogInfo(string message);
     }
 }
