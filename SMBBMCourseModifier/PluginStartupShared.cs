@@ -1,8 +1,6 @@
 ﻿using HarmonyLib;
-using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.IO;
 
 namespace SMBBMCourseModifier
 {
@@ -22,7 +20,7 @@ namespace SMBBMCourseModifier
             if (!Directory.Exists(PluginResources.dataDir))
             {
                 Directory.CreateDirectory(PluginResources.dataDir);
-               PluginResources.pluginLogger.LogInfo($"Created {PluginResources.dataDir} folder since it didn't already exist");
+                PluginResources.pluginLogger.LogInfo($"Created {PluginResources.dataDir} folder since it didn't already exist");
             }
 
             // Find and load all the configuration JSON files
@@ -62,15 +60,12 @@ namespace SMBBMCourseModifier
         {
             PluginResources.pluginLogger.LogInfo($"Loading file {filepath}");
 
-            using (StreamReader file = File.OpenText(filepath))
-            using (JsonTextReader reader = new JsonTextReader(file))
-            {
-                // Serializethe JSON file into a C# one
-                JObject obj = JToken.ReadFrom(reader) as JObject;
-                CourseModDef courseModDef = obj.ToObject<CourseModDef>();
-                MergeCourses(courseModDef.course_defs);
-                PluginResources.pluginLogger.LogInfo($"Loaded: {courseModDef}");
-            }
+
+            // Serializethe JSON file into a C# one
+            var courseModDef = PluginResources.JsonLoader.DeserializeJson<CourseModDef>(filepath);
+
+            MergeCourses(courseModDef.course_defs);
+            PluginResources.pluginLogger.LogInfo($"Loaded: {courseModDef}");
         }
 
         /// <summary>

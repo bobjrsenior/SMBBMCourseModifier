@@ -6,11 +6,10 @@ namespace SMBBMCourseModifier
 {
     internal class CourseModDef
     {
-        public string name;
-        public string description;
-        public string author;
-        public int file_format_version;
-        public Dictionary<String, CourseDef> course_defs;
-
+        public string name { get; set; }
+        public string description { get; set; }
+        public string author { get; set; }
+        public int file_format_version { get; set; }
+        public Dictionary<String, CourseDef> course_defs { get; set; }
     }
 }

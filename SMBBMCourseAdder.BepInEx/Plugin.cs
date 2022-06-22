@@ -17,7 +17,7 @@ namespace SMBBMCourseModifier.BepInEx
         public override void Load()
         {
             Plugin.Log = base.Log;
-            PluginResources.InitializePluginResources(ModLoader.BEPINEX, PluginInfo.PLUGIN_NAME, new BepInExPluginLogger(), Paths.GameRootPath, new BepInExLeaderboardDisabler());
+            PluginResources.InitializePluginResources(ModLoader.BEPINEX, PluginInfo.PLUGIN_NAME, new BepInExPluginLogger(), Paths.GameRootPath, new BepInExJsonLoader(), new BepInExLeaderboardDisabler());
             PluginStartupShared plugin = new();
             plugin.Load();
             AddComponent<DelayedCourseModifier>();

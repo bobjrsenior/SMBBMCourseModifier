@@ -1,7 +1,6 @@
 ﻿using Flash2;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using UnhollowerBaseLib;
 using UnhollowerRuntimeLib;
 using UnityEngine;
@@ -153,7 +152,7 @@ namespace SMBBMCourseModifier
         /// A helper method to log every base game course in a JSON format (+1 extra comma)
         /// </summary>
         /// <param name="dataManager">Data Manager from the game to pull from</param>
-        private void LogCourses(MgCourseDataManager dataManager)
+        /*private void LogCourses(MgCourseDataManager dataManager)
         {
             StringBuilder sb = new();
             sb
@@ -217,7 +216,7 @@ namespace SMBBMCourseModifier
         public string JsonBool(bool test)
         {
             return test ? "true" : "false";
-        }
+        }*/
 
         // Eperimental, doesn't work right now
         private void InitializeCourseAdding()
