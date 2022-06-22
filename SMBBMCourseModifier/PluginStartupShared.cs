@@ -36,7 +36,7 @@ namespace SMBBMCourseModifier
             {
                 dict += $"\"{course.Key}\", \"{course.Value}\"\n";
             }
-            PluginResources.PluginLogger.LogInfo($"Final Course List JSON is {{{dict}}}");
+            PluginResources.PluginLogger.LogDebug($"Final Course List JSON is {{{dict}}}");
 
             // If we are patching something, make sure to disable the leaderboards
             if (PluginResources.courses.Count > 0)
@@ -48,7 +48,6 @@ namespace SMBBMCourseModifier
             var harmony = new Harmony("com.bobjrsenior.SMBBMCourseModifier");
             harmony.PatchAll();
 
-            //TODO AddComponent<DelayedCourseModifier>();
             PluginResources.PluginLogger.LogInfo($"Plugin {PluginResources.PLUGIN_NAME} is loaded!");
         }
 
@@ -58,14 +57,14 @@ namespace SMBBMCourseModifier
         /// <param name="filepath">filepath of the JSON file to load</param>
         private void LoadJSONFile(string filepath)
         {
-            PluginResources.PluginLogger.LogInfo($"Loading file {filepath}");
+            PluginResources.PluginLogger.LogDebug($"Loading file {filepath}");
 
 
             // Serializethe JSON file into a C# one
             var courseModDef = System.Text.Json.JsonSerializer.Deserialize<CourseModDef>(File.ReadAllText(filepath)); ;
 
             MergeCourses(courseModDef.course_defs);
-            PluginResources.PluginLogger.LogInfo($"Loaded: {courseModDef}");
+            PluginResources.PluginLogger.LogDebug($"Loaded: {courseModDef}");
         }
 
         /// <summary>

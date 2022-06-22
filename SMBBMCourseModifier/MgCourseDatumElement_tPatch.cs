@@ -26,6 +26,19 @@ namespace SMBBMCourseModifier
                         return false;
                     }
                 }
+                // Default values if the goal color isn't defined
+                switch(in_goalKind)
+                {
+                    case MainGameDef.eGoalKind.Blue:
+                        __result = 1;
+                        return false;
+                    case MainGameDef.eGoalKind.Green:
+                        __result = 2;
+                        return false;
+                    case MainGameDef.eGoalKind.Red:
+                        __result = 3;
+                        return false;
+                }
             }
             return true;
         }

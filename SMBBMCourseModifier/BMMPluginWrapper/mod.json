@@ -1,10 +1,10 @@
 {
   "Title": "SMBBM Course Modifier",
   "Id": "com.bobjrsenior.SMBBMCourseModifier",
-  "DLLFile": "SMBBMCourseModifier.BMM.dll",
-  "Description": "A mod that modifies the courses in SMB to be made of different stages, stage agmounts, ect.",
+  "DLLFile": "SMBBMCourseModifier.dll",
+  "Description": "A mod that modifies the courses in SMB to be made of different stages, stage amounts, ect.",
   "Version": "1.0.0",
-  "Date": "06/21/2022",
+  "Date": "06/22/2022",
   "Author": "bobjrsenior",
-  "AuthorURL": "N/A"
+  "AuthorURL": "https://github.com/bobjrsenior/SMBBMCourseModifier"
 }
