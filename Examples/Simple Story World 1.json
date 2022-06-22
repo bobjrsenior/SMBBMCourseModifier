@@ -1,0 +1,125 @@
+{
+    "name": "Simple Story World 1",
+    "description": "Story Mode is complicated since there are so many choices. This makes world 1 Simple!",
+    "author": "bobjrsenior",
+    "file_format_version": 1,
+    "course_defs": {
+      "Smb2_StoryWorld01": {
+        "next_course": "Smb2_StoryWorld02",
+        "start_movie_id": "Story01_A",
+        "end_movie_id": "Story01_B",
+        "course_stages": [
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 2201,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 2201,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 2201,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 2201,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 2201,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 2201,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 2201,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 2201,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 2201,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 2201,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }

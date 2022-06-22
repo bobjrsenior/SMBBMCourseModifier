@@ -12,8 +12,8 @@ General Feature List:
 5. (BepInEx Only for now) Change the "next_step" for goals to 0 or a negative number
 
 Disclaimers:
-1. (BepInEx Only for now) Making the first stage in a course have a blue goal with a negative next_step soft locks on course load
-2. 
+1. (BepInEx Only for now) Making the goal with a next_step negative enough to go to stage 0 (or a negative stage) soft locks the game
+
 ## Installing for Banana Mod Manager
 
 1. Download the SMBBMCourseModifier.BMM.zip file from the Releases page

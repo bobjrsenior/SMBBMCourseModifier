@@ -1,0 +1,162 @@
+{
+    "name": "SMB1 Casual Backwards",
+    "description": "Do you think you know the SMB1 Casual course fowards and backwards? Now's your chance to find out!",
+    "author": "bobjrsenior",
+    "file_format_version": 1,
+    "course_defs": {
+      "Smb1_Casual": {
+        "next_course": "Invalid",
+        "start_movie_id": "Invalid",
+        "end_movie_id": "Invalid",
+        "course_stages": [
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 1103,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 1102,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 1101,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 1009,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 1008,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 1007,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 1006,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 1005,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": false,
+            "stage_id": 1091,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": true,
+            "is_half_time": false,
+            "stage_id": 1004,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": true,
+            "stage_id": 1003,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          },
+          {
+            "is_check_point": false,
+            "is_half_time": true,
+            "stage_id": 1002,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              },
+              {
+                "goal_kind": "Green",
+                "next_step": 3
+              }
+            ]
+          },
+          {
+            "is_check_point": true,
+            "is_half_time": true,
+            "stage_id": 1001,
+            "goals": [
+              {
+                "goal_kind": "Blue",
+                "next_step": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
