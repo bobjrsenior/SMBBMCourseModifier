@@ -5,22 +5,16 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMBBMCourseModifier", "SMBBMCourseModifier\SMBBMCourseModifier.csproj", "{5230263D-561E-4518-980B-79148F7CC8B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMBBMCourseModifier.BepInEx", "SMBBMCourseAdder.BepInEx\SMBBMCourseModifier.BepInEx.csproj", "{2E51E156-DA4B-46FD-BE42-C642EF7596E4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Release_BepInEx|Any CPU = Release_BepInEx|Any CPU
+		Release_BMM|Any CPU = Release_BMM|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5230263D-561E-4518-980B-79148F7CC8B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5230263D-561E-4518-980B-79148F7CC8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5230263D-561E-4518-980B-79148F7CC8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5230263D-561E-4518-980B-79148F7CC8B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E51E156-DA4B-46FD-BE42-C642EF7596E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E51E156-DA4B-46FD-BE42-C642EF7596E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E51E156-DA4B-46FD-BE42-C642EF7596E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E51E156-DA4B-46FD-BE42-C642EF7596E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5230263D-561E-4518-980B-79148F7CC8B7}.Release_BepInEx|Any CPU.ActiveCfg = BepInEx|Any CPU
+		{5230263D-561E-4518-980B-79148F7CC8B7}.Release_BepInEx|Any CPU.Build.0 = BepInEx|Any CPU
+		{5230263D-561E-4518-980B-79148F7CC8B7}.Release_BMM|Any CPU.ActiveCfg = BMM|Any CPU
+		{5230263D-561E-4518-980B-79148F7CC8B7}.Release_BMM|Any CPU.Build.0 = BMM|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,15 +8,33 @@
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<LangVersion>latest</LangVersion>
 		<SMBBMDir>C:\Program Files (x86)\Steam\steamapps\common\smbbm</SMBBMDir>
+		<SMBBMBepDir>Z:\smbbm</SMBBMBepDir>
 		<CopyLocalLockFileAssemblies>True</CopyLocalLockFileAssemblies>
+		<Configurations>BMM;BepInEx</Configurations>
 	</PropertyGroup>
+
+	<!-- BEPINEX IL2CPP -->
+	<PropertyGroup Condition="'$(Configuration)'=='BepInEx'">
+		<OutputPath>..\bin\BepInEx\</OutputPath>
+		<DefineConstants>BIE</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='BMM'">
+		<OutputPath>..\bin\BMM\</OutputPath>
+		<DefineConstants>BMM</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(Configuration)'=='BepInEx'">
+		<PackageReference Include="BepInEx.IL2CPP" Version="6.0.0-*" IncludeAssets="compile" />
+		<PackageReference Include="BepInEx.PluginInfoProps" Version="1.1.0" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Il2CppAssemblyUnhollower.BaseLib" Version="0.4.33.3" IncludeAssets="compile" />
 		<PackageReference Include="System.Text.Json" Version="6.0.5" IncludeAssets="compile" />
 	</ItemGroup>
 
-	<ItemGroup>
+	<ItemGroup Condition="'$(Configuration)'=='BMM'">
 		<Reference Include="Assembly-CSharp">
 			<HintPath>$(SMBBMDir)\managed\Assembly-CSharp.dll</HintPath>
 			<Private>False</Private>
@@ -34,4 +52,31 @@
 			<Private>False</Private>
 		</Reference>
 	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)'=='BepInEx'">
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(SMBBMBepDir)\BepInEx\unhollowed\Assembly-CSharp.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Il2Cppmscorlib">
+			<HintPath>$(SMBBMBepDir)\BepInEx\unhollowed\Il2Cppmscorlib.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$(SMBBMBepDir)\BepInEx\unhollowed\UnityEngine.CoreModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="SMBBMLeaderboardDisabler">
+			<HintPath>$(SMBBMBepDir)\BepInEx\plugins\SMBBMLeaderboardDisabler.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="JsonLibs">
+			<HintPath>$(SMBBMBepDir)\BepInEx\plugins\JsonLibs\JsonLibs.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+
+	<Target Name="CopyCustomContent" AfterTargets="AfterBuild" Condition="'$(Configuration)'=='BMM'">
+		<Copy SourceFiles="BMMPluginWrapper\mod.json" DestinationFolder="$(OutDir)" />
+	</Target>
 </Project>

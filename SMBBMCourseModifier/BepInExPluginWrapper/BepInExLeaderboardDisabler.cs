@@ -1,4 +1,5 @@
-﻿namespace SMBBMCourseModifier.BepInEx
+﻿#if BIE
+namespace SMBBMCourseModifier.BepInEx
 {
     public class BepInExLeaderboardDisabler : LeaderboardDisabler
     {
@@ -13,3 +14,4 @@
         }
     }
 }
+#endif

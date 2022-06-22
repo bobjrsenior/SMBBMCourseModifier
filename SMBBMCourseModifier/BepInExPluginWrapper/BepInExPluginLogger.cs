@@ -1,4 +1,5 @@
-﻿namespace SMBBMCourseModifier.BepInEx
+﻿#if BIE
+namespace SMBBMCourseModifier.BepInEx
 {
     public class BepInExPluginLogger : PluginLogger
     {
@@ -13,3 +14,4 @@
         }
     }
 }
+#endif

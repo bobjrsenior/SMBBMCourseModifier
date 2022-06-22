@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿#if BIE
+using BepInEx;
 using BepInEx.IL2CPP;
 using BepInEx.Logging;
 
@@ -24,3 +25,4 @@ namespace SMBBMCourseModifier.BepInEx
         }
     }
 }
+#endif
