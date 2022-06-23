@@ -12,13 +12,15 @@ General Feature List:
 5. (BepInEx Only for now) Change the "next_step" for goals to 0 or a negative number
 
 Disclaimers:
-1. (BepInEx Only for now) Making the goal with a next_step negative enough to go to stage 0 (or a negative stage) soft locks the game
+1. Backup your save file so you don't mess up your local times
+2. (BepInEx Only for now) Making the goal with a next_step negative enough to go to stage 0 (or a negative stage) soft locks the game
 
 ## Installing for Banana Mod Manager
 
-1. Download the SMBBMCourseModifier.BMM.zip file from the Releases page
-2. Extract it in your main game folder (the zip file structure should put the plugin in the right place)
-3. Enable it within BMM
+1. Backup your save file so you don't mess up your local times
+2. Download the SMBBMCourseModifier.BMM.zip file from the Releases page
+3. Extract it in your main game folder (the zip file structure should put the plugin in the right place)
+4. Enable it within BMM
 
 ## Installing for BepInEx (Required if running through wine/proton)
 
@@ -36,8 +38,9 @@ This plugin uses [BepInEx](https://github.com/BepInEx/BepInEx) as a mod loader s
 
 ### Installing This Plugin
 
-1. Download the SMBBMCourseModifier.BepInEx.zip file from the Releases page
-2. Extract it in your main game folder (the zip file structure should put the plugin in the right place)
+1. Backup your save file so you don't mess up your local times
+2. Download the SMBBMCourseModifier.BepInEx.zip file from the Releases page
+3. Extract it in your main game folder (the zip file structure should put the plugin in the right place)
 
 ## Using The Plugin
 
