@@ -411,8 +411,7 @@ In this example:
 To install this example, copy "SMB ReZero.json" to "UserData/CourseDefinitions" in your game directory.
 
 Disclaimers:
-1. Currently only works correctly in the BepInEx version
-2. This course includes data for the SMB1 Casual Course which conflicts with "SMB1 Casual Backwards.json"
+1. This course includes data for the SMB1 Casual Course which conflicts with "SMB1 Casual Backwards.json"
 
 `--- Configuration not included here due to size ---`
 
