@@ -9,11 +9,11 @@ General Feature List:
 2. Roughly determine the halfway point where extra levels begin
 3. (Affects Story Only) Determine what move should play before the course begins and after it ends
 4. Change the "next_step" for goals (i.e. should the blue goal on stage 1 send you to stage 2 or 15?)
-5. (BepInEx Only for now) Change the "next_step" for goals to 0 or a negative number
+5. Change the "next_step" for goals to 0 or a negative number
 
 Disclaimers:
 1. Backup your save file so you don't mess up your local times
-2. (BepInEx Only for now) Making the goal with a next_step negative enough to go to stage 0 (or a negative stage) soft locks the game
+2. Making the goal with a next_step negative enough to go to stage 0 (or a negative stage) soft locks the game
 
 ## Installing for Banana Mod Manager
 
@@ -98,8 +98,7 @@ The configuration file format looks like this:
 For more examples and descriptions of the format, see [Examples](/Examples).
 
 Default Goal next_step values if non are provided:
-1. (BMM Currently) If a Goal Color isn't defined, the next_step value defaults to 1
-2. (BepInEx Only for now) If a Goal Color isn't defined, the default next_step value is 1 for Blue, 2 for Green, and 3 for Red 
+1. If a Goal Color isn't defined, the default next_step value is 1 for Blue, 2 for Green, and 3 for Red 
 
 Notes:
 1. In the default courses, Green can technically go up to 4 but the next_step is generally 2
@@ -109,7 +108,7 @@ Notes:
 
 When making custom courses, knowing what the default ones look like is helpful. This repo has a list of the default courses for convenience. You can find them [here](/Default_Course_Defs.json)
 
-Disclaimer: Some default courses use a next_step value of 0. Unless you really want a value of 0 use 1 in your custom course instead. The BepInEx version (and hopefully BMM version eventually) supports 0 and negative next_step values so you risk making an unbeatable course if you leave it at 0. The mod avoids this when loading default courses but can't for custom ones since it could be intentional.
+Disclaimer: Some default courses use a next_step value of 0. Unless you really want a value of 0 use 1 in your custom course instead. The mod supports 0 and negative next_step values so you risk making an unbeatable course if you leave it at 0. The mod avoids this when loading default courses but can't for custom ones since it could be intentional.
 
 ## Building
 
