@@ -18,8 +18,6 @@ namespace SMBBMCourseModifier.BMM
             plugin.Load();
 
             List<Type> listInjectedTypes = new(1);
-            listInjectedTypes.Add(typeof(DelayedCourseModifier));
-            Console.WriteLine("Loaded Plugin Modifier");
             return listInjectedTypes;
         }
 
@@ -27,11 +25,18 @@ namespace SMBBMCourseModifier.BMM
         {
             if (delayedCourseModifier == null)
             {
-                //Console.WriteLine("Trying to inject DelayedCourseModifier Component");
-                //UnhollowerRuntimeLib.ClassInjector.RegisterTypeInIl2Cpp<DelayedCourseModifier>(UnhollowerRuntimeLib.RegisterTypeOptions.Default);
+                // Create Detours
+                MgCourseDatumElement_tPatch.CreateDetour();
+
+                // Register our MonoBehaviour
+                // For some strange reason, it won't be injected automatically when returned
+                // by OnModLoad if the MgCourseDatumElement_tPatch.GetNextStepDelegate is defined
+                // I couldn't figure out why because it makes no sense but this gets around the issue.
+                ClassInjector.RegisterTypeInIl2Cpp(typeof(DelayedCourseModifier));
+
+                // Create an Object to run our MonoBehaviour
                 var obj = new GameObject { hideFlags = HideFlags.HideAndDontSave };
                 UnityEngine.Object.DontDestroyOnLoad(obj);
-                Console.WriteLine("Trying to add DelayedCourseModifier Component");
                 delayedCourseModifier = new DelayedCourseModifier(obj.AddComponent(Il2CppType.Of<DelayedCourseModifier>()).Pointer);
             }
         }

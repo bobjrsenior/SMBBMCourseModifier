@@ -21,6 +21,9 @@ namespace SMBBMCourseModifier.BepInEx
             PluginResources.InitializePluginResources(ModLoader.BEPINEX, PluginInfo.PLUGIN_NAME, new BepInExPluginLogger(), Paths.GameRootPath, new BepInExLeaderboardDisabler());
             PluginStartupShared plugin = new();
             plugin.Load();
+
+            // Create Detours
+            MgCourseDatumElement_tPatch.CreateDetour();
             AddComponent<DelayedCourseModifier>();
         }
     }

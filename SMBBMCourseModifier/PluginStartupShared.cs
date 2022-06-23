@@ -1,11 +1,12 @@
-﻿using HarmonyLib;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 
 namespace SMBBMCourseModifier
 {
     public class PluginStartupShared
     {
+
+
         public void Load()
         {
             //TODO PluginStartupShared.PluginResources.PluginLogger = base.PluginResources.PluginLogger;
@@ -43,10 +44,6 @@ namespace SMBBMCourseModifier
             {
                 PluginResources.LeaderboardDisabler.DisableLeaderboards(PluginResources.PLUGIN_NAME);
             }
-
-            // Harmony Patching
-            var harmony = new Harmony("com.bobjrsenior.SMBBMCourseModifier");
-            harmony.PatchAll();
 
             PluginResources.PluginLogger.LogInfo($"Plugin {PluginResources.PLUGIN_NAME} is loaded!");
         }
